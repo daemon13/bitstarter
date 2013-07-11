@@ -10,14 +10,14 @@ var fs = require('fs');
 // fs.readFileSync(index.html)
 // buf.toString([encoding], [start], [end])
 
-var data = fs.readFileSync('index.html');
-var data2 = buf.toString(data);
+// var data = fs.readFileSync('index.html');
+// var data2 = buf.toString(data);
 // console.log(data);
 
 app.get('/', function(request, response) {
-  var data = fs.readFileSync('index.html');
-  var data2 = buf.toString(data);
-  response.send(data2);
+  var data = fs.readFileSync("index.html", "utf8");
+  // var data2 = buf.toString(data);
+  response.send(data);
 });
 
 var port = process.env.PORT || 5000;
