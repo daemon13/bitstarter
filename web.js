@@ -15,6 +15,8 @@ var data2 = buf.toString(data);
 // console.log(data);
 
 app.get('/', function(request, response) {
+  var data = fs.readFileSync('index.html');
+  var data2 = buf.toString(data);
   response.send(data2);
 });
 
