@@ -2,6 +2,17 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
+var fs = require('fs');
+
+// fs.readFileSync(filename, [options])#
+// Synchronous version of fs.readFile. Returns the contents of the filename.
+// If the encoding option is specified then this function returns a string. Otherwise it returns a buffer. 
+// fs.readFileSync(index.html)
+// buf.toString([encoding], [start], [end])
+
+var data = fs.readFileSync('index.html');
+console.log(data);
+
 app.get('/', function(request, response) {
   response.send('Hello World 2!');
 });
