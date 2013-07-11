@@ -11,10 +11,11 @@ var fs = require('fs');
 // buf.toString([encoding], [start], [end])
 
 var data = fs.readFileSync('index.html');
-console.log(data);
+var data2 = buf.toString(data);
+// console.log(data);
 
 app.get('/', function(request, response) {
-  response.send('Hello World 2!');
+  response.send(data2);
 });
 
 var port = process.env.PORT || 5000;
